@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Commit-msg hook that triggers the agentic router automatically.
+# Usage: set AUTO_ROUTER=1 to run on every commit, or include [ai] or [agent] in the commit message.
+
+MSG_FILE="$1"
+if [ -z "$MSG_FILE" ]; then
+  exit 0
+fi
+
+MSG="$(cat "$MSG_FILE")"
+
+# Decide whether to invoke router: AUTO_ROUTER env var or tag in commit message
+if [ "${AUTO_ROUTER-}" = "1" ] || echo "$MSG" | grep -qiE '\[ai\]|\[agent\]'; then
+  SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)/scripts"
+  ROUTER="$SCRIPT_DIR/router.sh"
+  if [ -x "$ROUTER" ] || command -v bash >/dev/null 2>&1; then
+    # Run in background so commit is not blocked
+    nohup bash "$ROUTER" "$MSG" >/dev/null 2>&1 &
+  fi
+fi
+
+exit 0
