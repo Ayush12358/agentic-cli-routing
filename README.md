@@ -1,27 +1,13 @@
 Agentic CLI Routing
 ====================
 
-Lightweight skill and routing helpers that prefer external agentic CLIs (Gemini, Codex) with a Copilot fallback.
+Lightweight skill and routing helpers that prefer external agentic CLIs (Gemini, Codex) with a Copilot fallback, so you never have to switch between different cli agents anymore.
 
-One-line cross-platform installers
+Installer
 ----------------------------------
 
-Use the appropriate single-line command below for your platform. Both attempt to run the release-bundled installer (preferred) or copy the skill files directly, then clean up temporary files.
-
-Unix / macOS / Linux:
+Installs a skill into the `.github/skills/agentic-cli-routing` directory of your repository, and cleans up after itself.
 
 ```bash
 curl -sL https://raw.githubusercontent.com/Ayush12358/agentic-cli-routing/main/release/install-latest.sh | bash -s -- Ayush12358/agentic-cli-routing
 ```
-
-Notes
------
-
-- The installer attempts to use the latest GitHub release tag; if none is available it falls back to the `main` branch.
-- Review scripts before running them on production systems.
-- The scripts clean up temporary files by default; if you want to keep the temporary clone, run the installer steps manually instead of using the one-liners.
-
-Support
--------
-
-Open an issue at https://github.com/Ayush12358/agentic-cli-routing/issues
