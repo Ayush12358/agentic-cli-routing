@@ -8,22 +8,10 @@ One-line cross-platform installers
 
 Use the appropriate single-line command below for your platform. Both attempt to run the release-bundled installer (preferred) or copy the skill files directly, then clean up temporary files.
 
-Unix / macOS / WSL (bash):
+Unix / macOS / Linux:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/Ayush12358/agentic-cli-routing/main/release/install-latest.sh | bash -s -- Ayush12358/agentic-cli-routing
-```
-
-If you prefer `wget`:
-
-```bash
-wget -qO- https://raw.githubusercontent.com/Ayush12358/agentic-cli-routing/main/release/install-latest.sh | bash -s -- Ayush12358/agentic-cli-routing
-```
-
-Windows (PowerShell):
-
-```powershell
-iwr -useb https://raw.githubusercontent.com/Ayush12358/agentic-cli-routing/main/release/install-latest.ps1 | pwsh -c - -Ayush12358/agentic-cli-routing
 ```
 
 Notes
